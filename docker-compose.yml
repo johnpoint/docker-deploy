@@ -14,13 +14,13 @@ services:
       - /web/conf:/etc/nginx/conf.d
       - /web/ssl:/web/ssl
       
-  #php-fpm:
-  #  image:                 johnpoint/php-lvcshu:latest
-  #  container_name:        php-fpm
-  #  networks:
-  #    - site-lvcshu
-  #  volumes:
-  #    - /web/vhost:/web/vhost
+  php-fpm:
+   image:                 johnpoint/php:latest
+   container_name:        php-fpm
+   networks:
+     - site-lvcshu
+   volumes:
+     - /web/vhost:/web/vhost
  
   mysql:
     image:                 mysql
@@ -31,7 +31,7 @@ services:
     volumes:
       - /web/mysql/data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: DNMP-lvcshu
+      MYSQL_ROOT_PASSWORD: mysqlpassword
 
 networks:
   site-lvcshu:
