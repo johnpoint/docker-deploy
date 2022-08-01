@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'nginx/**'
+      - '.github/workflows/docker-image-nginx.yml'
 
 jobs:
 
