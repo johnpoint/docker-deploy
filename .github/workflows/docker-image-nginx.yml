@@ -24,6 +24,6 @@ jobs:
 
       - name: Push to DockerHub
         run: |
-          - docker push johnpoint/nginx:$(date +%s)
-          - docker tag johnpoint/nginx:$(date +%s) johnpoint/nginx:lastest
-          - docker push johnpoint/nginx:lastest
+          docker push johnpoint/nginx:$(date +%s)
+          docker tag johnpoint/nginx:$(date +%s) johnpoint/nginx:lastest
+          docker push johnpoint/nginx:lastest
